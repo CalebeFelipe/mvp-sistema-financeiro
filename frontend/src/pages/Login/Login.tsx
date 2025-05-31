@@ -15,27 +15,42 @@ export const Login: React.FC = () => {
 
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className="login-container">
+            <div className="login-card">
+                <h1>Sistema Financeiro</h1>
+                <p>Entre com suas credenciais</p>
 
-                <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Digite o seu melhor e-mail"
-                    required
-                />
-                <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Digite a sua senha"
-                    required
-                />
 
-                <button type='submit'>Enviar</button>
+                <form onSubmit={handleSubmit}>
+                    <div className="input-group">
+                        <label>Email:
+                            <input
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder="Digite o seu melhor e-mail"
+                                required
+                            />
+                        </label>
+                    </div>
 
-            </form>
+                    <div className="input-group">
+
+                        <label>Senha:
+                            <input
+                                type="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                placeholder="Digite a sua senha"
+                                required
+                            />
+                        </label>
+                    </div>
+
+                    <button type='submit' className="input-button">Enviar</button>
+
+                </form>
+            </div>
         </div>
     )
 
