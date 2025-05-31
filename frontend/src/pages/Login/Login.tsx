@@ -6,11 +6,25 @@ export const Login: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const resetForm = () => {
+        setEmail('');
+        setPassword('');
+    }
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
 
         console.log('Email:', email);
         console.log('Password:', password);
+
+        const loginSuccess = false;
+
+        if (loginSuccess) {
+            console.log('Login realizado com sucesso!');
+            resetForm();
+        } else {
+            console.log('Erro no login - mantém os dados');
+        }
     }
 
 
