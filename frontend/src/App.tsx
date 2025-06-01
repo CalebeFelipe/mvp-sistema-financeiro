@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Login } from './pages/Login/';
+import { Register } from './pages/Register'
 
 function App() {
 
@@ -12,6 +13,8 @@ function App() {
           <Route path="/" element={<Navigate to="/login" replace/>} />
 
           <Route path="/login" element={<Login />} />
+
+          <Route path="/cadastro" element={<Register />} />
         </Routes>
       </Router>
 
