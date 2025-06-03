@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Link} from 'react-router-dom'
 import './Login.css'
 
 export const Login: React.FC = () => {
@@ -64,6 +65,14 @@ export const Login: React.FC = () => {
                     <button type='submit' className="input-button">Enviar</button>
 
                 </form>
+
+                <div className="login-footer">
+                    <p>
+                        Não tem uma conta?
+
+                        <Link to="/cadastro" className="link">Cadastre-se</Link>
+                    </p>
+                </div>
             </div>
         </div>
     )
