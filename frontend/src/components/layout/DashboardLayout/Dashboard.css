@@ -1,0 +1,87 @@
+/* === DASHBOARD LAYOUT PRINCIPAL === */
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 100vh;
+    background-color: #f8fafc;
+}
+
+/* === ÁREA PRINCIPAL (main) === */
+.dashboard-layout main {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* === HEADER DO CONTEÚDO === */
+.dashboard-layout h1 {
+    padding: 2rem 2rem 1rem 2rem;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a202c;
+    border-bottom: 1px solid #e2e8f0;
+    background: white;
+}
+
+/* === ÁREA DE CONTEÚDO === */
+.dashboard-layout .content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    background: #f8fafc;
+}
+
+/* === RESPONSIVIDADE === */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    .dashboard-layout {
+        grid-template-columns: 200px 1fr;
+    }
+
+    .dashboard-layout .content {
+        padding: 1.5rem;
+    }
+
+    .dashboard-layout h1 {
+        font-size: 1.75rem;
+        padding: 1.5rem 1.5rem 1rem 1.5rem;
+    }
+}
+
+/* Mobile (até 768px) */
+@media (max-width: 768px) {
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .dashboard-layout .content {
+        padding: 1rem;
+    }
+
+    .dashboard-layout h1 {
+        font-size: 1.5rem;
+        padding: 1rem;
+        text-align: center;
+    }
+}
+
+/* Mobile pequeno (até 480px) */
+@media (max-width: 480px) {
+    .dashboard-layout .content {
+        padding: 0.75rem;
+    }
+
+    .dashboard-layout h1 {
+        font-size: 1.25rem;
+        padding: 0.75rem;
+    }
+}
+
+/* === SMOOTH SCROLLING === */
+.dashboard-layout .content {
+    scroll-behavior: smooth;
+    /* Scroll suave */
+}
