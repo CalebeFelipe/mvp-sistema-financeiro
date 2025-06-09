@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import './Login.css'
 
 export const Login: React.FC = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const resetForm = () => {
         setEmail('');
@@ -18,11 +19,14 @@ export const Login: React.FC = () => {
         console.log('Email:', email);
         console.log('Password:', password);
 
-        const loginSuccess = false;
+        const loginSuccess = true;
 
         if (loginSuccess) {
             console.log('Login realizado com sucesso!');
             resetForm();
+
+            navigate('/dashboard');
+
         } else {
             console.log('Erro no login - mantém os dados');
         }
