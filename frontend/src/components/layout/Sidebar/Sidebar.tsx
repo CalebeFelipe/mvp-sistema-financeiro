@@ -26,12 +26,12 @@ export const Sidebar: React.FC = () => {
             <nav className="sidebar__nav">
                 <ul className="sidebar__menu">
                     {sidebarItems.map(item => (
-                        <li className="sidebar__item">
+                        <li key={item.id} className="sidebar__item">
 
-                            <Link to={item.path} className={`sidebar__link ${location.pathname === item.path ? 'sidebar__link--active' : ''}`}></Link>
-
-                            <span className="sidebar__icon">{item.icon}</span>
-                            <span className="sidebar__label">{item.label}</span>
+                            <Link to={item.path} className={`sidebar__link ${location.pathname === item.path ? 'sidebar__link--active' : ''}`}>
+                                <span className="sidebar__icon">{item.icon}</span>
+                                <span className="sidebar__label">{item.label}</span>
+                            </Link>
                         </li>
                     ))
                     }
