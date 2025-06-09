@@ -1,7 +1,8 @@
 import type { StatsCardProps } from "../../../types/dashboard"
+import './StatsCard.css'
 
 
-export const StatsCard = ({title, value, icon, color, trend, isLoading}:StatsCardProps) => {
+export const StatsCard = ({title, value, icon, color, trend, isLoading = false}:StatsCardProps) => {
 
     if(isLoading) {
         return (
