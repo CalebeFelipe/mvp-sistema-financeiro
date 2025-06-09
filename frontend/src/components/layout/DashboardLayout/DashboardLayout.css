@@ -2,15 +2,31 @@
 .dashboard-layout {
     display: grid;
     grid-template-columns: 250px 1fr;
+    /* Sidebar + Main */
     min-height: 100vh;
     background-color: #f8fafc;
 }
 
+/* === SIDEBAR (fixa) === */
+.dashboard-layout .sidebar {
+    position: fixed;
+    /* ← CORREÇÃO 1: Sidebar fixa */
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    z-index: 1000;
+    overflow-y: auto;
+    /* Scroll se menu for muito grande */
+}
+
 /* === ÁREA PRINCIPAL (main) === */
 .dashboard-layout main {
+    margin-left: 250px;
+    /* ← CORREÇÃO 2: Espaço para sidebar */
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    min-height: 100vh;
 }
 
 /* === HEADER DO CONTEÚDO === */
@@ -22,6 +38,10 @@
     color: #1a202c;
     border-bottom: 1px solid #e2e8f0;
     background: white;
+    position: sticky;
+    /* Header grudado no topo */
+    top: 0;
+    z-index: 100;
 }
 
 /* === ÁREA DE CONTEÚDO === */
@@ -40,6 +60,16 @@
         grid-template-columns: 200px 1fr;
     }
 
+    .dashboard-layout .sidebar {
+        width: 200px;
+        /* Sidebar menor */
+    }
+
+    .dashboard-layout main {
+        margin-left: 200px;
+        /* Ajustar margem */
+    }
+
     .dashboard-layout .content {
         padding: 1.5rem;
     }
@@ -54,7 +84,23 @@
 @media (max-width: 768px) {
     .dashboard-layout {
         grid-template-columns: 1fr;
-        grid-template-rows: auto 1fr;
+        /* Stack vertical */
+    }
+
+    .dashboard-layout .sidebar {
+        transform: translateX(-100%);
+        /* Esconder sidebar */
+        transition: transform 0.3s ease;
+    }
+
+    .dashboard-layout .sidebar--open {
+        transform: translateX(0);
+        /* Mostrar quando necessário */
+    }
+
+    .dashboard-layout main {
+        margin-left: 0;
+        /* Sem margem no mobile */
     }
 
     .dashboard-layout .content {
@@ -83,5 +129,4 @@
 /* === SMOOTH SCROLLING === */
 .dashboard-layout .content {
     scroll-behavior: smooth;
-    /* Scroll suave */
 }

@@ -1,6 +1,6 @@
 import { Sidebar } from '../Sidebar'
 import type { DashboardLayoutProps } from "../../../types/dashboard";
-import './Dashboard.css'
+import './DashboardLayout.css'
 
 export const DashboardLayout = ({ children, title }: DashboardLayoutProps) => {
 
