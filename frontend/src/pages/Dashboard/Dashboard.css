@@ -1,0 +1,37 @@
+/* === GRID DOS CARDS === */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* ← CORREÇÃO: 2 colunas fixas */
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* === RESPONSIVIDADE DOS CARDS === */
+
+/* Tablets - cards em 2 colunas menores */
+@media (max-width: 1024px) {
+    .dashboard-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+/* Mobile - cards empilhados */
+@media (max-width: 768px) {
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-stats {
+        gap: 0.75rem;
+    }
+}
+
+/* === CARDS RESPONSIVOS === */
+.dashboard-stats .stats-card {
+    min-height: 140px;
+}
